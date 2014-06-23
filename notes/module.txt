@@ -1,0 +1,4 @@
+module
+    __name__
+    如果 module 是作为 脚本执行时，则__name__ 的值为 __main__
+    如果 mudule 是被import 的，则__name__的值为 module 的名字

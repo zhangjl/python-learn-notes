@@ -1,0 +1,6 @@
+__doc__
+    用在 module、class、function 
+    for example:
+
+    import sys;
+    print sys.__doc__

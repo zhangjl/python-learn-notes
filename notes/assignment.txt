@@ -1,0 +1,10 @@
+1. 赋值操作符(=)
+python赋值不会继承值
+    y = (x = x + 1);    # 错误
+    y = x = x + 1;      # 正确
+
+2. 多变量赋值
+    x,y,z = 1,2,'this is str';
+    # x 1
+    # y 2
+    # z this is str
