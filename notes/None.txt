@@ -1,0 +1,12 @@
+The following are defined as having false values in Python:
+    None
+    False (Boolean)
+    Any numeric zero:
+    0 (integer)
+    0.0 (float)
+    0L (long integer)
+    0.0+0.0j (complex)
+    "" (empty string)
+    [] (empty list)
+    () (empty tuple)
+    {} (empty dictionary)
