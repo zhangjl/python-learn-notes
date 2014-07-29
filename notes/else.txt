@@ -1,0 +1,3 @@
+可以在 while 和 for 循环中使用 else 语句
+在循环中使用时, else 子句只在循环完成后执行, 也就是说 break 语句也会跳过 else 块
+for 循环也可以有 else 用于循环后处理(post-processing). 它和 while 循环中的 else 处理方式相同. 只要 for 循环是正常结束的(不是通过 break ), else 子句就会执行

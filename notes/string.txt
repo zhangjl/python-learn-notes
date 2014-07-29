@@ -1,0 +1,5 @@
+1. 字符串操作
+    连接：str1 + str2
+    获取字串: str[index1:index2]
+    s = "abcde";s[:None] # abcde
+
