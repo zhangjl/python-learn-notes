@@ -1,0 +1,2 @@
+Python 中可以通过 sys 模块来访问这些文件的句柄. 导入 sys 模块以后, 就可以使用sys.stdin , sys.stdout 和 sys.stderr 访问
+sys 模块通过 sys.argv 属性提供了对命令行参数的访问

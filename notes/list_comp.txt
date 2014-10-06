@@ -1,0 +1,6 @@
+列表解析
+    1、[expr for iter_var in iterable]
+    [x ** 2 for x in range(6)]
+
+    2、[expr for iter_var in iterable if cond_expr]
+    [x ** 2 for x in range(6) if x % 2]
