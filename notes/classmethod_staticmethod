@@ -1,0 +1,55 @@
+staticmethod 基本上和一个全局函数差不多，只不过可以通过类或类的实例对象（python里光说对象总是容易产生混淆， 因为什么都是对象，包括类，而实际上类实例对象才是对应静态语言中所谓对象的东西）来调用而已， 不会隐式地传入任何参数。这个和静态语言中的静态方法比较像。
+
+classmethod 是和一个class相关的方法，可以通过类或类实例调用，并将该class对象（不是class的实例对象）隐式地 当作第一个参数传入。就这种方法可能会比较奇怪一点，不过只要你搞清楚了python里class也是个真实地 存在于内存中的对象，而不是静态语言中只存在于编译期间的类型。
+
+正常的方法就是和一个类的实例对象相关的方法，通过类实例对象进行调用，并将该实例对象隐式地作为第一 个参数传入，这个也和其它语言比较像。
+
+#!/usr/bin/python
+
+class Person:
+
+	def __init__(self):
+		print "init"
+
+	@staticmethod
+	def sayHello(hello):
+		if not hello:
+			hello='hello'
+		print "i will sya %s" %hello
+
+
+	@classmethod
+	def introduce(clazz,hello):
+		clazz.sayHello(hello)
+		print "from introduce method"
+
+	def hello(self,hello):
+		self.sayHello(hello)
+		print "from hello method"		
+
+
+def main():
+	Person.sayHello("haha")
+	Person.introduce("hello world!")
+	#Person.hello("self.hello")	#TypeError: unbound method hello() must be called with Person instance as first argument (got str instance instead)
+	
+	print "*" * 20
+	p = Person()
+	p.sayHello("haha")
+	p.introduce("hello world!")
+	p.hello("self.hello")
+
+if __name__=='__main__':
+	main()
+
+输出结果：
+i will sya haha
+i will sya hello world!
+from introduce method
+********************
+init
+i will sya haha
+i will sya hello world!
+from introduce method
+i will sya self.hello
+from hello method
