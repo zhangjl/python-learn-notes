@@ -1,0 +1,5 @@
+1. 如果没有异常发生， try中有return 语句， 这个时候else块中的代码是没有办法执行到的， 但是finally语句中如果有return 语句会修改最终的返回值， 我个人理解的是try中return 语句先将要返回的值放在某个 CPU寄存器，然后运行finally语句的时候修改了这个寄存器的值，最后在返回到try中的return语句返回修改后的值。
+
+2. 如果没有异常发生， try中没有return语句，那么else块的代码是执行的，但是如果else中有return， 那么也要先执行finally的代码， 返回值的修改与上面一条一致。
+
+3. 如果有异常发生，try中的return语句肯定是执行不到， 在捕获异常的 except语句中，如果存在return语句，那么也要先执行finally的代码，finally里面的代码会修改最终的返回值，然后在从except 块的retrun 语句返回最终修改的返回值， 和第一条一致。
