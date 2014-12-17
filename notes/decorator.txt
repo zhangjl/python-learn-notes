@@ -1,0 +1,39 @@
+@g
+@f
+def func():
+    pass
+
+等价于
+
+func = g(f(func))
+
+1. 无参数的装饰器
+@deco
+def foo():pass
+
+等价于
+foo = deco(foo)
+
+2. 有参数的装饰器
+@decomaker(deco_args)
+def foo():pass
+
+等价于
+foo = decomaker(deco_args)(foo)
+
+example:
+1. 
+@decomaker(deco_args)
+@deco
+def foo():pass
+
+等价于
+foo = decomaker(deco_args)(deco(foo))
+
+1. 
+@decomaker(deco_args)
+@deco(deco_args)
+def foo():pass
+
+等价于
+foo = decomaker(deco_args)(deco(deco_args)(foo))
