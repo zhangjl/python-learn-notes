@@ -1,0 +1,4 @@
+语法：
+    lambda arg1[,arg2,...,argn]:expression
+
+lambda 表达式返回一个可调用的函数对象

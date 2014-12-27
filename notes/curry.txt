@@ -1,0 +1,15 @@
+偏函数
+产生一个固化部分参数后的新的函数对象；如add(x,y)函数，如果固话x = 1并产生一个新的函数add1，则add1(2)等于3
+from functiontools import partial
+
+使用方法：
+1. 固话的参数按照方法中的顺序
+from functiontools import partial
+from operator import add
+add1 = partial(add,1)
+add1(2)
+
+2. 使用参数关键字，固话指定的关键字的参数值
+from functiontools import partial
+base2int = partial(int,base = 2)
+base2int('10010')  # 18
