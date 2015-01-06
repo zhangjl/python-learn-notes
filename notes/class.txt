@@ -1,0 +1,45 @@
+1. 构造器方法：__init__
+2. 构造器方法：__new__，静态方法，和__init__传入相同的参数
+3. 解构器方法：__del__，该方法是类的实例的所有引用被释放后，才会调用
+class C(P):
+    def __init__(self):
+        print "init"
+
+    def __del__(self):
+        P.__del__(self)
+        print "delete"
+
+if '__main__' == __name__:
+    c1 = C()
+    c2 = c1
+    c3 = c1
+
+    del c1 # 没有输出
+    del c2 # 没有输出
+    del c3 # 输出delete
+
+4. __bases__
+    父类对象
+
+5. __class__
+    类对象
+
+6. __name__
+
+7. __all__
+    1) 在模块(*.py)中使用意为导出__all__列表里的类、函数、变量等成员，否则将导出modualA中所有不以下划线开头（私有）的成员，在模块中使用__all__属性可避免在相互引用时的命名冲突
+
+    2) 在包的__init__.py中意为导出包里的模块
+
+8. __slots__
+__slots__用于限定类属性，如：
+class A(object):
+    __slots__ = ['var']
+
+此时外部调用时，如：
+a = A()
+a.var = 4    #不会报错
+a.other = 4  #此时则会抛出异常AttributeError
+
+9. __new__
+    所有的__new__()都是类方法

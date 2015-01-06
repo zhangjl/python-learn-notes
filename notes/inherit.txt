@@ -1,0 +1,4 @@
+继承
+class Son(P):
+    def __init__(self):
+        P.__init__(self)
