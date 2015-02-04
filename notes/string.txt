@@ -3,3 +3,11 @@
     获取字串: str[index1:index2]
     s = "abcde";s[:None] # abcde
 
+A prefix of 'b' or 'B' is ignored in Python 2; it indicates that the literal
+should become a bytes literal in Python 3 (e.g. when code is automatically
+converted with 2to3). A 'u' or 'b' prefix may be followed by an 'r' prefix.
+
+Bytes literals are always prefixed with 'b' or 'B'; they produce an instance
+of the bytes type instead of the str type. They may only contain ASCII
+characters; bytes with a numeric value of 128 or greater must be expressed
+with escapes.
