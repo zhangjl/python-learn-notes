@@ -41,20 +41,26 @@ print addx(1,2) # 5
 verision 3
 '''
 def wrapper3(x):
-    def inner(fn):
-        def inner2(*args):
+    print 'wrapper3'
+    def inner3(fn):
+        print 'inner3'
+        def inner5(*args):
+            print 'inner5'
             return fn(args[0],args[1]) + x;
-        return inner2
+        return inner5
 
-    return inner;
+    return inner3;
 
 def wrapper4(x):
-    def inner(fn):
-        def inner2(*args):
+    print 'wrapper4'
+    def inner4(fn):
+        print 'inner4'
+        def inner6(*args):
+            print 'inner6'
             return fn(args[0],args[1]) + x;
-        return inner2
+        return inner6
 
-    return inner;
+    return inner4;
 
 @wrapper3(n3)
 @wrapper4(n4)
@@ -62,3 +68,5 @@ def addxy(x,y):
     return x + y;
 
 print addxy(1,2) # 10
+# wrapper3(n3)(wrapper4(n4)(addxy))(x,y)
+
