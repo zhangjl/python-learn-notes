@@ -1,3 +1,6 @@
+#! /usr/bin/env python
+#! -*- encoding: utf-8 -*-
+
 class DummyResource:
     def __init__(self, tag):
         self.tag = tag
